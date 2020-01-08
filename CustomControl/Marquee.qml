@@ -3,26 +3,30 @@ import QtQuick 2.5
 
 Rectangle {
     id: root
-    width: 200; height: 100
+    //width: 200; height: 100
     color: "steelblue"
     clip: true
     anchors.centerIn: parent
 
-    property alias marquee: marquee
-    property alias marquee_sequential: marquee_sequential
-    property alias marquee_sequential_property: marquee_property
+    //Text元素抛出
+    property alias text: marquee.text
+    property alias font: marquee.font
+    property alias text_color: marquee.color
+
+    //SequentialAnimation元素抛出
+    property alias animation_loops: marquee_sequential.loops 
+    property alias animation_running: marquee_sequential.running
+
+    //PropertyAnimation元素抛出
+    property alias animation_duration: marquee_property.duration
+
 
     Text {
         id: marquee
-        height: parent.height
-        text: marquee_text
         verticalAlignment: Text.AlignVCenter
-
         SequentialAnimation {
             id: marquee_sequential
             loops: Animation.Infinite
-            running: false
-
             PropertyAnimation {
                 id: marquee_property
                 target: marquee
@@ -32,7 +36,45 @@ Rectangle {
                 duration: 1000
             }
         }
-
     }
+
+    states: [
+        State {
+            name: "lefttoright"
+            PropertyChanges {
+                target: marquee_property
+                property: "x"
+                from: root.width
+                to: - marquee.width
+            }
+        },
+        State {
+            name: "righttoleft"
+            PropertyChanges {
+                target: marquee_property
+                property: "x"
+                from: - marquee.width
+                to: root.width
+            }
+        },
+        State {
+            name: "uptodown"
+            PropertyChanges {
+                target: marquee_property
+                property: "y"
+                from: -marquee.height
+                to: root.height 
+            }
+        },
+        State {
+            name: "downtoup"
+            PropertyChanges {
+                target: marquee_property
+                property: "y"
+                from: root.height
+                to: -marquee.height
+            }
+        } 
+    ]
 
 }
