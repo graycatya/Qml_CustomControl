@@ -26,10 +26,10 @@ Rectangle {
             PropertyAnimation{
                 id: imageroll_property
                 target: imageroll 
-                property: "x"
-                from: root.width
-                to: - imageroll.width
-                duration: 1000
+                //property: "x"
+                //from: root.width
+                //to: - imageroll.width
+                //duration: 1000
             }
         }
     }

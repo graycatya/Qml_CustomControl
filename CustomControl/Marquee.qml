@@ -30,10 +30,10 @@ Rectangle {
             PropertyAnimation {
                 id: marquee_property
                 target: marquee
-                property: "x"
-                from: root.width
-                to: - marquee.width
-                duration: 1000
+                //property: "x"
+                //from: root.width
+                //to: - marquee.width
+                //duration: 1000
             }
         }
     }
