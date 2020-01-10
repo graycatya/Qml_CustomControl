@@ -1,121 +1,182 @@
-import QtQuick 2.5
+import QtQuick 2.12
 
 
 Rectangle{
-    width: 80; height: 20
+    width: 180; height: 30
+    implicitWidth: 180
+    implicitHeight: 30
     id: root
     clip: true
     anchors.centerIn: parent
-    color: "gray"
-    border.color: "red"
+    color: "white"
+    border.color: "gray"
 
-    TextInput {
-        id: inputone
-        clip: true
-        x:2;
-        width: root.width * 0.2
-        height: root.height * 0.9
-    }
-
-    TextInput {
-        id: inputtwo
-        clip: true
-        x:root.width * 0.2;
-        width: root.width * 0.2
-        height: root.height * 0.9
-    }
-
-    TextInput {
-        id: inputthree
-        clip: true
-        x:root.width * 0.2*2;
-        width: root.width * 0.2
-        height: root.height * 0.9
-    }
-
-    TextInput {
-        id: inputfour
-        clip: true
-        x:root.width * 0.2*3;
-        width: root.width * 0.2
-        height: root.height * 0.9
-    }
+    property string text: ipone.text + "." + iptwo.text + "." + ipthree.text + "." + ipfour.text
+    property color textcolor: "black"
     
 
-    //antialiasing: bool
-    //border.color: color
-    //border.width: int
-    //color: color
-    //gradient: any
-    //radius: real
-    //
-    //
-    //activeFocus: bool
-    //activeFocusOnTab: bool
-    //anchors.alignWhenCentered: bool
-    //anchors.baseline: AnchorLine
-    //anchors.baselineOffset: real
-    //anchors.bottom: AnchorLine
-    //anchors.bottomMargin: real
-    //anchors.centerIn: Item
-    //anchors.fill: Item
-    //anchors.horizontalCenter: AnchorLine
-    //anchors.horizontalCenterOffset: real
-    //anchors.left: AnchorLine
-    //anchors.leftMargin: real
-    //anchors.margins: real
-    //anchors.right: AnchorLine
-    //anchors.rightMargin: real
-    //anchors.top: AnchorLine
-    //anchors.topMargin: real
-    //anchors.verticalCenter: AnchorLine
-    //anchors.verticalCenterOffset: real
-    //antialiasing: bool
-    //baselineOffset: int
-    //children: list<Item>
-    //childrenRect.height: real
-    //childrenRect.width: real
-    //childrenRect.x: real
-    //childrenRect.y: real
-    //clip: bool
-    //containmentMask: QObject*
-    //data: list<Object>
-    //enabled: bool
-    //focus: bool
-    //height: real
-    //implicitHeight: real
-    //implicitWidth: real
-    //layer.effect: Component
-    //layer.enabled: bool
-    //layer.format: enumeration
-    //layer.mipmap: bool
-    //layer.samplerName: string
-    //layer.samples: enumeration
-    //layer.smooth: bool
-    //layer.sourceRect: rect
-    //layer.textureMirroring: enumeration
-    //layer.textureSize: size
-    //layer.wrapMode: enumeration
-    //opacity: real
-    //parent: Item
-    //resources: list<Object>
-    //rotation: real
-    //scale: real
-    //smooth: bool
-    //state: string
-    //states: list<State>
-    //transform: list<Transform>
-    //transformOrigin: enumeration
-    //transitions: list<Transition>
-    //visible: bool
-    //visibleChildren: list<Item>
-    //width: real
-    //x: real
-    //y: real
-    //z: real
-    //childAt(realx,realy)
-    //forceActiveFocus()
-    //forceActiveFocus(Qt: : FocusReasonreason)
-    //nextItemInFocusChain(boolforward)
-    //objectName: string
+    TextInput {
+        id: ipone
+        clip: true
+        x: 1; y: 1
+        width: (root.width -2) * (2/11); height: root.height - 2
+        horizontalAlignment: TextInput.AlignHCenter
+        verticalAlignment: TextInput.AlignVCenter
+        KeyNavigation.tab: iptwo
+        selectByMouse: true
+        color: textcolor
+        
+        text: "0"
+        font.pointSize: root.height * 0.4
+
+        validator: RegExpValidator{regExp:/(2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2}/}
+
+        onTextEdited: {
+            focusswitch(ipone, iptwo)
+        }
+    }
+
+    Rectangle {
+        id: dotone
+        y: 1
+        width: (root.width -2) * (1/11); height: root.height - 2
+        anchors.left: ipone.right
+        Text {
+            width: parent.width; height: parent.height
+            color: textcolor
+            text: "."
+            font.pointSize: root.height * 0.4
+
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    TextInput {
+        id: iptwo
+        clip: true
+        y: 1
+        width: (root.width -2) * (2/11); height: root.height - 2
+        anchors.left: dotone.right
+        horizontalAlignment: TextInput.AlignHCenter
+        verticalAlignment: TextInput.AlignVCenter
+        KeyNavigation.tab: ipthree
+        selectByMouse: true
+        color: textcolor
+
+        text: "0"
+        font.pointSize: root.height * 0.4
+
+        validator: RegExpValidator{regExp:/(2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2}/}
+
+        onTextEdited: {
+            focusswitch(iptwo, ipthree)
+            if(iptwo.text == "")
+            {
+                ipone.focus = true
+            }
+        }
+    }
+
+    Rectangle {
+        id: dottwo
+        y: 1
+        width: (root.width -2) * (1/11); height: root.height - 2
+        anchors.left: iptwo.right
+        Text {
+            width: parent.width; height: parent.height
+            color: textcolor
+            text: "."
+            font.pointSize: root.height * 0.4
+
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    TextInput {
+        id: ipthree
+        clip: true
+        y: 1
+        width: (root.width -2) * (2/11); height: root.height - 2
+        anchors.left: dottwo.right
+        horizontalAlignment: TextInput.AlignHCenter
+        verticalAlignment: TextInput.AlignVCenter
+        KeyNavigation.tab: ipfour
+        selectByMouse: true
+        color: textcolor
+
+        text: "0"
+        font.pointSize: root.height * 0.4
+
+        validator: RegExpValidator{regExp:/(2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2}/}
+
+        onTextEdited: {
+            focusswitch(ipthree, ipfour)
+            if(ipthree.text == "")
+            {
+                iptwo.focus = true
+            }
+        }
+    }
+
+    Rectangle {
+        id: dotthree
+        y: 1
+        width: (root.width -2) * (1/11); height: root.height - 2
+        anchors.left: ipthree.right
+        Text {
+            width: parent.width; height: parent.height
+            color: textcolor
+            text: "."
+            font.pointSize: root.height * 0.4
+
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
+
+    TextInput {
+        id: ipfour
+        clip: true
+        y: 1
+        width: (root.width -2) * (2/11); height: root.height - 2
+        anchors.left: dotthree.right
+        horizontalAlignment: TextInput.AlignHCenter
+        verticalAlignment: TextInput.AlignVCenter
+        KeyNavigation.tab: ipone
+        selectByMouse: true
+        color: textcolor
+
+        text: "0"
+        font.pointSize: root.height * 0.4
+
+        validator: RegExpValidator{regExp:/(2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2}/}
+
+        onTextEdited: {
+            //focusswitch(ipone, iptwo)
+            if(ipfour.text == "")
+            {
+                ipthree.focus = true
+            }
+        }
+    }
+
+/*
+    Component.onCompleted: {
+            //console.log("hello world!")
+            //greet.connect(rectangleId.myGreeting)
+    }*/
+
+    function focusswitch(inputone, inputtwo)
+    {
+        if (inputone.length === 3)
+        {
+            inputtwo.focus = true
+        } else if(inputone.text > 25 && inputone.length === 2)
+        {
+            inputtwo.focus = true
+        }
+    }
+
 }
