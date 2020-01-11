@@ -1,13 +1,20 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include "QmlCatLog.h"
+
 
 int main(int argc, char *argv[])
 {
+
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
 
+    QMLCATLOG::CatLog *CatLog = QMLCATLOG::CatLog::Instance();
+
     QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty("catlog", CatLog);
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
@@ -17,4 +24,5 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     return app.exec();
+
 }
