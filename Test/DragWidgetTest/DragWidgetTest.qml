@@ -2,7 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import "../../CustomControl"
 Item {
-    width: 800
+    width: 600
     height: 600
 
     Rectangle {
@@ -10,13 +10,25 @@ Item {
 
         x: 100
         y: 100
-        width: 300
-        height: 200
+        width: 100
+        height: 100
 
         color: "lightblue"
+        
         DragWidget {
-            control: moveItem
+            mouseStyle: Qt.SizeAllCursor
+            control: parent 
+            anchors.fill: parent
+            hoverenabled: false
+            onPosDragWidget: {
+                control.x += pos.x 
+                control.y += pos.y
+            }
+        }
 
+        DragSizeWidget {
+            control: parent
+            anchors.fill: parent
         }
     }
 }

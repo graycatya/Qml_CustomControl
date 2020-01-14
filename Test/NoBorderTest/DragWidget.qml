@@ -9,8 +9,8 @@ Item {
     property int mouseStyle: Qt.ArrowCursor
     property bool drag: true
     property bool hoverenabled: true
-    implicitWidth: 4   
-    implicitHeight: 4
+    implicitWidth: 4   //这里隐式的宽为12
+    implicitHeight: 4   //这里隐式的高为12
     
     property var control: parent
 

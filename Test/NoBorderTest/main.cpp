@@ -1,20 +1,26 @@
 #include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickView>
+#include<QQmlContext>
+#include<QQuickWidget>
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    //QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
+
+ /*   QQuickView viewer;
+    viewer.setFlags(Qt::FramelessWindowHint);
+    //viewer.setColor(QColor(Qt::transparent));
+    //将viewer设置为main.qml属性
+    viewer.rootContext()->setContextProperty("mainwindow",&viewer);
+    viewer.setSource(QStringLiteral("qrc:/main.qml"));
+    viewer.setTitle(QStringLiteral("Tycho crater on the Moon (height exaggerated)"));
+    viewer.setResizeMode(QQuickView::SizeRootObjectToView);
+    viewer.show();*/
     QGuiApplication app(argc, argv);
-
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl)
-            QCoreApplication::exit(-1);
-    }, Qt::QueuedConnection);
-    engine.load(url);
+    QQmlApplicationEngine engine("qrc:/main.qml");
 
     return app.exec();
 }

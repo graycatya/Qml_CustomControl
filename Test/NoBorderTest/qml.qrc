@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>DragWidget.qml</file>
+        <file>DragSizeWidget.qml</file>
     </qresource>
 </RCC>
