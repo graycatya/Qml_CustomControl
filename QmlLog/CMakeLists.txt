@@ -17,8 +17,6 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/QmlCatLog QmlCatLog.out)
 set (EXTRA_LIBS2 ${EXTRA_LIBS2} QmlCatLog)
 
 include_directories(${LIB_CATLOG_INCLUDE})
-#link_directories(${LIB_CATLOG_DIR})
-#link_libraries(QmlCatLog)
 
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
@@ -27,6 +25,5 @@ aux_source_directory(. DIR_LIB_SRCS)
 add_executable(${PROJECT_NAME} ${DIR_LIB_SRCS} "qml.qrc" )
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${EXTRA_LIBS2})
-#target_link_libraries(${PROJECT_NAME} )
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick)
 
