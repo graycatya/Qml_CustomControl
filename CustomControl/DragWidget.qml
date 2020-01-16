@@ -7,12 +7,15 @@ Item {
 
     property alias containsMouse: mouseArea.containsMouse
     property int mouseStyle: Qt.ArrowCursor
-    property bool drag: true
+    //property bool drag: true
     property bool hoverenabled: true
     implicitWidth: 4   
     implicitHeight: 4
     
     property var control: parent
+
+    signal clicked(real x, real y)
+    signal doubleClicked(real x, real y)
 
     MouseArea {
         id: mouseArea
@@ -44,5 +47,16 @@ Item {
                 posDragWidget(Qt.point(mouseX - lastPoint.x, mouseY - lastPoint.y));
             }
         }
+
+        //鼠标点击
+        onClicked: {
+            root.clicked(mouseX, mouseY)
+        }
+
+        //鼠标双击
+        onDoubleClicked: {
+            root.doubleClicked(mouseX, mouseY)
+        }
+
     }
 }

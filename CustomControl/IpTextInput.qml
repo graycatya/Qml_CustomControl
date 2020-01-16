@@ -162,12 +162,6 @@ Rectangle{
         }
     }
 
-/*
-    Component.onCompleted: {
-            //console.log("hello world!")
-            //greet.connect(rectangleId.myGreeting)
-    }*/
-
     function focusswitch(inputone, inputtwo)
     {
         if (inputone.length === 3)
