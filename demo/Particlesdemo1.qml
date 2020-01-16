@@ -13,8 +13,10 @@ Rectangle {
 
     Emitter {
         id: emitter 
-        anchors.centerIn: parent 
+        //anchors.centerIn: parent 
+        x: 0; y: 0 
         anchors.left: parent.left
+        anchors.verticalCenter: parent.verticalCenter
         width: 1; height: 1
         system: particleSystem 
         emitRate: 10 
@@ -22,10 +24,15 @@ Rectangle {
         lifeSpanVariation: 400
         size: 32 
         velocity: AngleDirection{
-            angle: 0
-            angleVariation: 15
+            angle: -45
+            //angleVariation: 15
             magnitude: 100
-            magnitudeVariation: 50
+            //magnitudeVariation: 50
+        }
+
+        acceleration: AngleDirection {
+            angle: 90 
+            magnitude: 25
         }
     }
 
