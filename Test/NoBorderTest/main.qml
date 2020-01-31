@@ -10,13 +10,8 @@ Window {
     height: 400
     flags: Qt.FramelessWindowHint
     //color: "transparent"
-    Rectangle {
-        id: rectangle
-        x: 0
-        y: 0
-        width: 100
-        height: 100
-        color: "blue"
+
+        //color: "blue"
         DragWidget {
             mouseStyle: Qt.SizeAllCursor
             control: parent
@@ -33,5 +28,5 @@ Window {
             anchors.fill: parent
         }
     }
-}
+
 
