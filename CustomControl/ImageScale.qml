@@ -1,9 +1,9 @@
 import QtQuick 2.12
 
-Rectangle {
+Item {
     id: root 
     clip: true 
-    anchors.centerIn: parent 
+    //anchors.centerIn: parent 
 
     //Image对象属性抛出
     property alias source: image.source

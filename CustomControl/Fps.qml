@@ -6,8 +6,8 @@ Item {
     property int fpsCount: 0
     property color textColor: "white"
     property int textSize: 32
-    implicitHeight: 30
-    implicitWidth: 30
+    implicitHeight: 32
+    implicitWidth: 32
 
 /*
     Image {
@@ -29,7 +29,8 @@ Item {
     }*/
 
     Rectangle
-    { id: rect
+    { 
+        id: rect
         width: parent.width
         height: parent.height
         color: Qt.rgba(0, 0, 0, 0)

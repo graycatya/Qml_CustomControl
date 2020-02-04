@@ -1,0 +1,1 @@
+D:/software/qt5.13/5.13.0/mingw73_32/lib/libQt5Quick.a D:/software/qt5.13/5.13.0/mingw73_32/lib/libQt5Qml.a D:/software/qt5.13/5.13.0/mingw73_32/lib/libQt5Network.a D:/software/qt5.13/5.13.0/mingw73_32/lib/libQt5Gui.a D:/software/qt5.13/5.13.0/mingw73_32/lib/libQt5Core.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

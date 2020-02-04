@@ -2,8 +2,8 @@ import QtQuick 2.12
  
 Flipable {
     id: filpable 
-    width: 128 
-    height: 128 
+    //width: image.source.width 
+    //height: image.source.height
     state: "axisY"
 
     property bool filpped: true 
@@ -18,7 +18,7 @@ Flipable {
     property alias loops: animation.loops
     property alias running: animation.running
 
-    front: Image { source: filpable.fronturl; anchors.centerIn: parent }
+    front: Image { id: image; source: filpable.fronturl; anchors.centerIn: parent }
     back: Image { source: filpable.backurl; anchors.centerIn: parent }
 
     transform: Rotation {

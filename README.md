@@ -14,4 +14,4 @@ QtQuick控件分享
 | ImageFlipable | 图片翻转 | [demo](Test/ImageFlipableTest/README.md) |
 | RotateCursor | 控件旋转器 | [demo](Test/RotateCursorTest/README.md) |
 | TemplateWidget | 自定义拖动控件 | [demo](Test/TemplateWidgetTest/README.md) |
-| TextOneByOneShow | 文字逐个显示 | [demo]() |
+| TextOneByOneShow | 文字逐个显示 | [demo](Test/TextOneByOneShowTest/README.md) |
