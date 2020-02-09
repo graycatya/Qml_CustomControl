@@ -5,10 +5,12 @@ import "UiConfig.js" as Uidefine
 
 
 Item {
+    id: root
     width: 1366 
     height: 256 
     property int endstation: 0
     property int thisstation: 0
+    property bool just: true
     property bool doorOpen: false
     
     Image {
@@ -157,6 +159,7 @@ Item {
     Image {
         x: 434; y: 84
         source: "../../png/arrowright.png"
+        rotation: root.just ? 0 : 180
     }
 
     Item {
@@ -201,6 +204,7 @@ Item {
     Image {
         x: 758; y: 85
         source: "../../png/arrowright.png"
+        rotation: root.just ? 0 : 180
     }
 
     Item {
@@ -254,31 +258,5 @@ Item {
         x: 1099; y: 174
         visible: !doorOpen
         source: "../../png/doorsonopened.png"
-    }
-    Timer {
-        interval: 2000
-        repeat: true 
-        running: true 
-        onTriggered: {
-            thisstation++;
-            if(thisstation >= 26)
-                thisstation = 0;
-                /*
-            endstataiontext.text = Uidefine.textstation[endstation]
-            endstataiontextenglish.text = Uidefine.textstationenglish[endstation]
-
-            thisstationtext.text = Uidefine.textstation[thisstation]
-            thisstationtextenglish.text = Uidefine.textstationenglish[thisstation]
-
-            animationone.text = Uidefine.textstation[thisstation-1]
-            animationoneenglish.text = Uidefine.textstationenglish[thisstation-1]
-
-            animationtwo.text = Uidefine.textstation[thisstation]
-            animationtwoenglish.text = Uidefine.textstationenglish[thisstation]
-
-            animationthree.text = Uidefine.textstation[thisstation+1]
-            animationthreeenglish.text = Uidefine.textstationenglish[thisstation+1]*/
-            doorOpen = !doorOpen;
-        }
     }
 }

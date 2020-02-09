@@ -5,11 +5,13 @@ import "UiConfig.js" as Uidefine
 
 
 Item {
+    id: root
     width: 1366 
     height: 256 
+    property int startstation: 20
     property int endstation: 0
-    property int thisstation: 0
-    property bool doorOpen: false
+    property int nextstation: 19
+    property bool just: true
     
     Image {
         id: imagebackground 
@@ -96,7 +98,7 @@ Item {
             Text {
                 id: thisstationtext
                 anchors.centerIn: parent
-                text: Uidefine.textstation[thisstation]
+                text: Uidefine.textstation[nextstation]
                 font.pixelSize: 24
                 font.family: "微软雅黑"
                 font.weight: Font.Bold
@@ -108,11 +110,25 @@ Item {
             Text {
                 id: thisstationtextenglish
                 anchors.centerIn: parent
-                text: Uidefine.textstationenglish[thisstation]
+                text: Uidefine.textstationenglish[nextstation]
                 font.pixelSize: 12
                 font.family: "微软雅黑"
                 font.weight: Font.Bold
             }
         }
+    }
+    Train {
+        x: 400; y: 107
+        just: root.just
+    }
+    StationAnimation {
+        x: 273; y: 38
+        startstation: root.startstation
+        endstation: root.endstation
+        nextstation: root.nextstation
+        just: root.just
+    }
+    StationName {
+        x: 0; y: 0
     }
 }

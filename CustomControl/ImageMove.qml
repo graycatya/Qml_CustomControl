@@ -7,7 +7,7 @@ Rectangle {
     width: imageroll.width 
     height: imageroll.height
     
-    anchors.centerIn: parent
+    //anchors.centerIn: parent
 
     //Image元素抛出
     property alias source: imageroll.source
@@ -68,7 +68,7 @@ Rectangle {
                 property: "y"
                 from: imageroll.y
                 to: imageroll.y
-                duration: animation_durations
+                duration: animation_duration
             }
         },
         State {
