@@ -119,8 +119,9 @@ Item {
     }
 
 
-
+    //动画
     Item {
+        id: leftround
         x: 241; y: 61
         width: 198; height: 179
         Item {
@@ -157,12 +158,14 @@ Item {
         }
     }
     Image {
+        id: leftarrowright
         x: 434; y: 84
         source: "../../png/arrowright.png"
         rotation: root.just ? 0 : 180
     }
 
     Item {
+        id: centreround
         x: 550; y: 40
         width: 198; height: 200
         Item {
@@ -202,12 +205,14 @@ Item {
         }
     }
     Image {
+        id: rightarrowright
         x: 758; y: 85
         source: "../../png/arrowright.png"
         rotation: root.just ? 0 : 180
     }
 
     Item {
+        id: rightround
         x: 859; y: 61
         width: 198; height: 179
         Item {
@@ -258,5 +263,118 @@ Item {
         x: 1099; y: 174
         visible: !doorOpen
         source: "../../png/doorsonopened.png"
+    }
+    onThisstationChanged: {
+        if(root.just)
+        {
+            if(root.thisstation == 0)
+            {
+                leftround.visible = false;
+                leftarrowright.visible = false;
+
+                centreround.x = 550 - 200; 
+                centreround.y = 40;
+                centreround.visible = true;
+
+                rightarrowright.x = 758 - 200; 
+                rightarrowright.y = 85;
+                rightarrowright.visible = true;
+
+                rightround.x = 859 - 200; 
+                rightround.y = 61;
+                rightround.visible = true;
+
+            } else if (root.thisstation == 25)
+            {
+                leftround.x = 241 + 200; 
+                leftround.y = 61;
+                leftround.visible = true;
+
+                leftarrowright.x = 434 + 200; 
+                leftarrowright.y = 84;
+                leftarrowright.visible = true;
+
+                centreround.x = 550 + 200; 
+                centreround.y = 40;
+                centreround.visible = true;
+
+                rightarrowright.visible = false;
+                rightround.visible = false;
+            } else {
+                leftround.x = 241; 
+                leftround.y = 61;
+                leftround.visible = true;
+
+                leftarrowright.x = 434; 
+                leftarrowright.y = 84;
+                leftarrowright.visible = true;
+
+                centreround.x = 550; 
+                centreround.y = 40;
+                centreround.visible = true;
+
+                rightarrowright.x = 758; 
+                rightarrowright.y = 85;
+                rightarrowright.visible = true;
+
+                rightround.x = 859; 
+                rightround.y = 61;
+                rightround.visible = true;
+            }
+        } else {
+            if(root.thisstation == 0)
+            {
+                leftround.visible = false;
+                leftarrowright.visible = false;
+
+                centreround.x = 550 - 200; 
+                centreround.y = 40;
+                centreround.visible = true;
+
+                rightarrowright.x = 758 - 200; 
+                rightarrowright.y = 85;
+                rightarrowright.visible = true;
+
+                rightround.x = 241 - 200; 
+                rightround.y = 61;
+                rightround.visible = true;
+
+            } else if (root.thisstation == 25)
+            {
+                leftround.x = 859 + 200; 
+                leftround.y = 61;
+                leftround.visible = true;
+
+                leftarrowright.x = 434 + 200; 
+                leftarrowright.y = 84;
+                leftarrowright.visible = true;
+
+                centreround.x = 550 + 200; 
+                centreround.y = 40;
+                centreround.visible = true;
+                rightarrowright.visible = false;
+                rightround.visible = false;
+            } else {
+                leftround.x = 859; 
+                leftround.y = 61;
+                leftround.visible = true;
+
+                leftarrowright.x = 434; 
+                leftarrowright.y = 84;
+                leftarrowright.visible = true;
+
+                centreround.x = 550; 
+                centreround.y = 40;
+                centreround.visible = true;
+
+                rightarrowright.x = 758; 
+                rightarrowright.y = 85;
+                rightarrowright.visible = true;
+
+                rightround.x = 241;
+                rightround.y = 61;
+                rightround.visible = true;
+            }
+        }
     }
 }

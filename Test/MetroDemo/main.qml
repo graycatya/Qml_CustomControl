@@ -1,5 +1,7 @@
 import QtQuick 2.12 
 
+import "../../CustomControl"
+
 Item {
     id: root
     width: 1366; height: 256
@@ -28,6 +30,12 @@ Item {
         nextstation: root.nextstation 
         just: root.just 
     }
+    Fps {
+        x: 1270; y: 0
+        implicitHeight: 26
+        implicitWidth: 26
+        textSize: 26
+    }
     Timer {
         id: timer
         interval: 6000
@@ -41,13 +49,11 @@ Item {
                 root.just = true
                 if(berth)
                 {
-                    console.log("true berth = true");
                     if(root.startstation >= root.endstation)
                     { 
-                        console.log("true berth = true1");
-                        root.startstation = 5
+                        root.startstation = 25
                         root.endstation = 0
-                        root.nextstation = 4
+                        root.nextstation = 25
                         root.just = false
                     }
                     root.startstation = root.nextstation;
@@ -66,13 +72,11 @@ Item {
                 root.just = false
                 if(berth)
                 {
-                    console.log("false berth = true");
                     if(root.startstation <= root.endstation)
                     {
-                        console.log("false berth = true1");
-                        root.startstation = 20
+                        root.startstation = 0
                         root.endstation = 25
-                        root.nextstation = 21
+                        root.nextstation = 0
                         root.just = true
                     }
                     root.startstation = root.nextstation;
