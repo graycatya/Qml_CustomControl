@@ -335,7 +335,7 @@ Item {
                 rightarrowright.y = 85;
                 rightarrowright.visible = true;
 
-                rightround.x = 241 - 200; 
+                rightround.x = 859 - 200; 
                 rightround.y = 61;
                 rightround.visible = true;
 

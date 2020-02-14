@@ -17,6 +17,10 @@
  * [Qt Design Studio](http://download.qt.io/development_releases/qtdesignstudio/)
  * [Qt 安装包](http://download.qt.io/development_releases/qt/)
 
+## 案例测试方式:
+
+qmlscene测试工具,如需创建项目式的工程,需要调整库路径以及图片资源路径.
+
 ## QtQuick控件说明
 
 |  控件名   | 功能  | 案例 |

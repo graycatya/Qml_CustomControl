@@ -18,6 +18,11 @@ Rectangle {
 
     //PropertyAnimation元素抛出
     property int animation_duration: 4000
+    property int xfrom: 0
+    property int xto: 0
+    property int yfrom: 0
+    property int yto: 0
+    state: "custom"
 
     Image {
         id: imageroll
@@ -170,6 +175,23 @@ Rectangle {
                 property: "y"
                 from: -imageroll.height
                 to: root.height
+                duration: animation_duration
+            }
+        },
+        State {
+            name: "custom"
+            PropertyChanges {
+                target: imageroll_propertyx
+                property: "x"
+                from: root.xfrom
+                to: root.xto
+                duration: animation_duration
+            }
+            PropertyChanges {
+                target: imageroll_propertyy
+                property: "y"
+                from: root.yfrom
+                to: root.yto
                 duration: animation_duration
             }
         }
