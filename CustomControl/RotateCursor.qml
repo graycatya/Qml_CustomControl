@@ -6,7 +6,7 @@ import QtQuick.Controls 2.12
 Rectangle {
     id: root
     property var control: parent
-    property int linewidth: 2
+    //property int linewidth: 2
     readonly property int recSize: 12
     width: recSize
     height: recSize 

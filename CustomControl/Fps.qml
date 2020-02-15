@@ -4,6 +4,7 @@ Item {
     id: root
     property int fps: 60 
     property int fpsCount: 0
+
     property color textColor: "white"
     property int textSize: 32
     implicitHeight: 32

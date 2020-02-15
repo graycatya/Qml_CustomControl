@@ -6,7 +6,7 @@ Flipable {
     //height: image.source.height
     state: "axisY"
 
-    property bool filpped: true 
+    //property bool filpped: true 
     property int originX: filpable.width/2
     property int originY: filpable.height/2
     property int angles: 180  
