@@ -16,12 +16,11 @@ Rectangle{
     property color textcolor: "black"
     property color corsorcolor: "red"
 
-    property bool corsorshow: true
-
-    property bool corsorshowone: true 
-    property bool corsorshowtwo: true 
-    property bool corsorshowthree: true 
-    property bool corsorshowfour: true
+    readonly property bool corsorshow: true
+    readonly property bool corsorshowone: true 
+    readonly property bool corsorshowtwo: true 
+    readonly property bool corsorshowthree: true 
+    readonly property bool corsorshowfour: true
     
     
 

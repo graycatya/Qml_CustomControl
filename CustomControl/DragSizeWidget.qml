@@ -8,10 +8,11 @@ Rectangle {
     width: parent.width  
     height: parent.height  
 
-    property var control: parent 
+     
     property color posborderColor: "#08a1ef"
     property color posColor: "white"
 
+    property var control: parent
     readonly property int posRadius: 6
 
     Rectangle {
