@@ -2,17 +2,27 @@ import QtQuick 2.12
 
 
 Rectangle{
+    id: root
     width: 180; height: 30
     implicitWidth: 180
     implicitHeight: 30
-    id: root
     clip: true
     anchors.centerIn: parent
     color: "white"
     border.color: "gray"
 
+
     property string text: ipone.text + "." + iptwo.text + "." + ipthree.text + "." + ipfour.text
     property color textcolor: "black"
+    property color corsorcolor: "red"
+
+    property bool corsorshow: true
+
+    property bool corsorshowone: true 
+    property bool corsorshowtwo: true 
+    property bool corsorshowthree: true 
+    property bool corsorshowfour: true
+    
     
 
     TextInput {
@@ -25,6 +35,8 @@ Rectangle{
         KeyNavigation.tab: iptwo
         selectByMouse: true
         color: textcolor
+        focus: false
+        cursorDelegate: cursorone
         
         text: "0"
         font.pointSize: root.height * 0.4
@@ -33,6 +45,18 @@ Rectangle{
 
         onTextEdited: {
             focusswitch(ipone, iptwo)
+        }
+        onFocusChanged: {
+            if(ipone.focus == true)
+            {
+                //console.log("ipone true");
+                root.corsorshowone = true 
+                root.corsorshowtwo = false 
+                root.corsorshowthree = false
+                root.corsorshowfour = false 
+            } else {
+                //console.log("ipone false");
+            }
         }
     }
 
@@ -63,6 +87,8 @@ Rectangle{
         KeyNavigation.tab: ipthree
         selectByMouse: true
         color: textcolor
+        focus: false
+        cursorDelegate: cursortwo
 
         text: "0"
         font.pointSize: root.height * 0.4
@@ -74,6 +100,18 @@ Rectangle{
             if(iptwo.text == "")
             {
                 ipone.focus = true
+            }
+        }
+        onFocusChanged: {
+            if(iptwo.focus == true)
+            {
+                //console.log("iptwo true");
+                root.corsorshowone = false 
+                root.corsorshowtwo = true
+                root.corsorshowthree = false
+                root.corsorshowfour = false 
+            } else {
+                //console.log("iptwo false");
             }
         }
     }
@@ -105,6 +143,8 @@ Rectangle{
         KeyNavigation.tab: ipfour
         selectByMouse: true
         color: textcolor
+        focus: false
+        cursorDelegate: cursorthree
 
         text: "0"
         font.pointSize: root.height * 0.4
@@ -116,6 +156,18 @@ Rectangle{
             if(ipthree.text == "")
             {
                 iptwo.focus = true
+            }
+        }
+        onFocusChanged: {
+            if(ipthree.focus == true)
+            {
+                //console.log("ipthree true");
+                root.corsorshowone = false 
+                root.corsorshowtwo = false 
+                root.corsorshowthree = true
+                root.corsorshowfour = false 
+            } else {
+                //console.log("ipthree false");
             }
         }
     }
@@ -147,6 +199,8 @@ Rectangle{
         KeyNavigation.tab: ipone
         selectByMouse: true
         color: textcolor
+        focus: false
+        cursorDelegate: cursorfour
 
         text: "0"
         font.pointSize: root.height * 0.4
@@ -160,10 +214,69 @@ Rectangle{
                 ipthree.focus = true
             }
         }
+        onFocusChanged: {
+            if(ipfour.focus == true)
+            {
+                //console.log("ipfour true");
+                root.corsorshowone = false 
+                root.corsorshowtwo = false 
+                root.corsorshowthree = false 
+                root.corsorshowfour = true 
+            } else {
+                //console.log("ipfour false");
+            }
+        }
+    }
+
+    Component {
+        id: cursorone
+        Rectangle {
+            width: 1
+            visible: root.corsorshow
+            height: root.height * 0.7
+            color: corsorshowone ? root.corsorcolor : "transparent"
+        }
+    }
+    Component {
+        id: cursortwo
+        Rectangle {
+            width: 1
+            visible: root.corsorshow
+            height: root.height * 0.7
+            color: corsorshowtwo ? root.corsorcolor : "transparent"
+        }
+    }
+    Component {
+        id: cursorthree
+        Rectangle {
+            width: 1
+            visible: root.corsorshow
+            height: root.height * 0.7
+            color: corsorshowthree ? root.corsorcolor : "transparent"
+        }
+    }
+    Component {
+        id: cursorfour
+        Rectangle {
+            width: 1
+            visible: root.corsorshow
+            height: root.height * 0.7
+            color: corsorshowfour ? root.corsorcolor : "transparent"
+        }
+    }
+
+    Timer {
+        interval: 500;
+        repeat: true;
+        running: true;
+        onTriggered: {
+            root.corsorshow = !root.corsorshow
+        }
     }
 
     function focusswitch(inputone, inputtwo)
     {
+
         if (inputone.length === 3)
         {
             inputtwo.focus = true
