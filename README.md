@@ -29,7 +29,6 @@ qmlscene测试工具,如需创建项目式的工程,需要调整库路径以及�
 | ImageScale  | 图片缩放 | [MarkDown](Test/ImageScaleTest/README.md) |
 | IpTextInput  | Ip输入框 | [MarkDown](Test/IpTextInputTest/README.md) |
 | Marquee  | 文字滚动(跑马灯) | [MarkDown](Test/MarqueeTest/README.md) |
-| QmlLog  | Qml轻量级日志模块 | [MarkDown](QmlLog/README.md) |
 | DragWidget&DragSizeWidget | 拖拽控件&控件大小调整 | [MarkDown](Test/DragWidgetTest/README.md) |
 | Fps | 画面每秒传输帧数 | [MarkDown](Test/FpsTest/README.md) |
 | ImageFlipable | 图片翻转 | [MarkDown](Test/ImageFlipableTest/README.md) |
@@ -39,6 +38,13 @@ qmlscene测试工具,如需创建项目式的工程,需要调整库路径以及�
 | ArcProgressBar | 圆弧&圆环型进度条 | [MarkDown](Test/ArcProgressBarTest/README.md) |
 | BarTypeProgressBar | 条型进度条 | [MarkDown](Test/BarTypeProgressBarTest/README.md) |
 | ImageFlicker | 图片定时闪烁 | [MarkDown](Test/ImageFlickerTest/README.md) |
+
+QtQuick 综合案例 - Qml轻量级日志系统(C++)
+------
+
+| 案例名称 | 名称 | 案例 |
+|  :----:  | :----: | :----: | 
+| QmlLog  | Qml轻量级日志模块 | [MarkDown](QmlLog/README.md) |
 
 
 QtQuick 综合案例 - 惠州地铁一号线
