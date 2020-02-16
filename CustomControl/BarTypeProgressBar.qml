@@ -4,7 +4,7 @@ import QtQuick.Shapes 1.12
 Rectangle {
     id: root 
     //进度条颜色
-    property alias progressbarcolor: progressbar.color
+    property alias progressbarColor: progressbar.color
     //进度条值
     property int value: 0
     property string backgroundColor: "transparent" 

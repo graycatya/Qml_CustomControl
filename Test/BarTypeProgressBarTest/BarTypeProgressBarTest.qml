@@ -5,8 +5,8 @@ Item {
     BarTypeProgressBar {
         width: 200; height: 30
         backgroundBorderWidth: 5
-        running: false
+        running: true
         duration: 2000
-        value: 200
+        //value: 200
     }
 }

@@ -26,4 +26,4 @@
 
 ## 效果
 
-![ImageFlicker](../../gif/ImageFlicker.gif)
+![Imagelipable](../../gif/ImageFlipable.gif)

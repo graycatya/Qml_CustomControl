@@ -11,12 +11,14 @@ Rectangle {
     //圆形进度背景
     property alias backdropstrokeColor: backdrop.strokeColor   
     //property alias backdropstrokeWidth: backdrop.strokeWidth
-    //画圆起始位置
-    property alias backdropstartX: backdrop.startX
-    property alias backdropstartY: backdrop.startY
-    //画圆结束位置
-    property alias backdroparcX: backdroparc.x
-    property alias backdroparcY: backdroparc.y
+    //进度条背景
+    //圆心位置
+    property alias backdroparcX: backdroparc.centerX
+    property alias backdroparcY: backdroparc.centerY
+    //进度条背景起始角度
+    property alias backdroparcstartAngle: backdroparc.startAngle
+    //进度条背景当前角度
+    property alias backdroparcsweepAngle: backdroparc.sweepAngle
 
 
     //进度条
@@ -51,12 +53,15 @@ Rectangle {
             strokeColor: "darkBlue"
             strokeWidth: root.strokeWidth
             capStyle: styles[root.capStyle]
-            startX: 0; startY: 46
-            PathArc {
+
+            PathAngleArc {
                 id: backdroparc
-                x: 46; y: 0
+                centerX: 46; centerY: 46
                 radiusX: root.radiusX; radiusY: root.radiusY
+                startAngle: -180
+                sweepAngle: 90
             }
+
         }
     }
 
