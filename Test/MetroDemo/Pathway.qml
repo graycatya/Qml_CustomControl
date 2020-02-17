@@ -21,7 +21,7 @@ BarTypeProgressBar {
             PropertyChanges {
                 target: pathway 
                 backgroundColor: "#a4a4a3"
-                progressbarcolor: "transparent"
+                progressbarColor: "transparent"
                 running: false
             }
         },
@@ -30,7 +30,7 @@ BarTypeProgressBar {
             PropertyChanges {
                 target: pathway
                 backgroundColor: "#a4a4a3"
-                progressbarcolor: "#0cfc00"
+                progressbarColor: "#0cfc00"
                 running: true
                 duration: 2000
             }
@@ -40,7 +40,7 @@ BarTypeProgressBar {
             PropertyChanges {
                 target: pathway 
                 backgroundColor: "#0cfc00"
-                progressbarcolor: "transparent"
+                progressbarColor: "transparent"
                 running: false
             }
         }   
