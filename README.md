@@ -52,5 +52,5 @@ QtQuick 综合案例 - 惠州地铁一号线
 
 | 案例名称 | 名称 | 案例 |
 |  :----:  | :----: | :----: | 
-| MetroDemo | 惠州地铁一号线案例 | [MarkDown](Test/MetroMarkDown/README.md) |
+| MetroDemo | 惠州地铁一号线案例 | [MarkDown](Test/MetroDemo/README.md) |
 
