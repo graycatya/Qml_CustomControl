@@ -151,10 +151,32 @@ Item {
 }
 ```
 
+***CurrentStationUi.qml***
+
+#### 组成控件
+
+1. 到站列表
+
+2. 到站动画
+
+> onThisstationChanged槽函数主要是接收thisstation参数的变化来设置到站动画的变化
+
+3. 开关门动画
+
+
+***NextStationUi.qml***
+
+#### 组成控件
+
+    1. 下一站列表
+    2. 站点轨道
+    3. 站点
+    4. 列车
+
 ## Fps控件
 
 ```
-//在3个界面中都有使用用来测试画面刷新率
+//在3个界面中都有使用来测试画面刷新率
     Fps {
         x: 1270; y: 0
         implicitHeight: 26
