@@ -17,6 +17,12 @@
  * [Qt Design Studio](http://download.qt.io/development_releases/qtdesignstudio/)
  * [Qt 安装包](http://download.qt.io/development_releases/qt/)
 
+ ## 控件&案例已测试过的环境
+
+ * Windows10
+ * Linux
+ * 树莓派3b+:[树莓派交叉编译配置](https://www.yinxiang.com/everhub/note/f3a9458f-7eda-4845-b145-7cc7bcd8d723)
+
 ## 案例测试方式:
 
 qmlscene测试工具,如需创建项目式的工程,需要调整库路径以及图片资源路径.
