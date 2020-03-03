@@ -11,6 +11,3 @@
 * color(字体颜色)
 * interval(显示间隔时间)
 
-## 效果
-
-![TextOneByOneShow](../../gif/TextOneByOneShow.gif)

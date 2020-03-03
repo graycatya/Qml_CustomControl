@@ -14,6 +14,3 @@
 * running(进度动画启动)
 * duration(进度条执行时间)
 
-## 效果
-
-![BarTypeProgressBar](../../gif/BarTypeProgressBar.gif)

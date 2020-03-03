@@ -8,7 +8,3 @@
 
 * textColor(Fps显示文字颜色)
 * textSize(文字大小)
-
-# 效果
-
-![fps](../../gif/Fps.gif)

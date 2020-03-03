@@ -34,6 +34,3 @@
 其中: 
 xfrom,xto,yfrom,yto 只在custom规定下使用
 
-
-## 效果
-![ImageMove](../../gif/ImageMove.gif)

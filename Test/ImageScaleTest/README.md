@@ -13,6 +13,3 @@
 * animation_from(图片缩放前)
 * animation_to(图片缩放后)
 
-## 效果
-
-![ImageScale](../../gif/ImageScale.gif)

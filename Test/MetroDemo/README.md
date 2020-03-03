@@ -186,6 +186,3 @@ Item {
 ```
 
 
-# 效果
-
-![MetroDemo](../../gif/MetroDemo.gif)

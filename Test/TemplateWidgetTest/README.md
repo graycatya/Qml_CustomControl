@@ -5,6 +5,3 @@
 
 目前问题是在控件旋转后拖拽算法问题
 
-## 效果(去掉了旋转功能)
-
-![TemplateWidget](../../gif/TemplateWidget.gif)

@@ -24,6 +24,3 @@
 * capStyle(圆弧线条类型)
 * strokeWidth(圆弧宽度)
 
-## 效果
-
-![ArcProgressBar](../../gif/ArcProgressBar.gif)

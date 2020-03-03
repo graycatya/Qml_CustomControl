@@ -24,6 +24,3 @@
 * loops(动画执行方式)
 * running(动画是否执行)
 
-## 效果
-
-![Imagelipable](../../gif/ImageFlipable.gif)

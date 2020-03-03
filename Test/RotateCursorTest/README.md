@@ -8,6 +8,3 @@
 
 * 无
 
-## 效果 
-
-![RotateCursor](../../gif/RotateCursor.gif)

@@ -10,6 +10,3 @@
 * textcolor(Ip字体颜色)
 * corsorcolor(光标颜色)
 
-## 效果
-
-![IpTextInput](../../gif/IpTextInput.gif)

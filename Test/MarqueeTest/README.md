@@ -12,7 +12,3 @@
 * animation_loops(动画循环)
 * animation_running(动画运行)
 * animation_duration(动画执行开始到结束时间)
-
-## 效果
-
-![Marquee](../../gif/Marquee.gif)

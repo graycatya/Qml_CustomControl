@@ -15,6 +15,3 @@ DragSizeWidget控件能让控件
 * posborderColor(拖拽点边框颜色)
 * posColor(拖拽点颜色)
 
-## 效果
-
-![DragWidget](../../gif/DragWidget.gif)

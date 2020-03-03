@@ -12,6 +12,3 @@
 * running(是否运行定时器)
 * visibles(是否显示)
 
-## 效果
-
-![ImageFlicker](../../gif/ImageFlicker.gif)
