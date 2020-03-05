@@ -23,6 +23,22 @@
  * Linux
  * 树莓派3b+:[树莓派交叉编译配置](https://www.yinxiang.com/everhub/note/f3a9458f-7eda-4845-b145-7cc7bcd8d723)
 
+ ## Qml 自绘方案
+
+* Qml Canvas
+>Qml中提供了Canvas组件, Qt5.0开始就有了,可以使用html大部分Canvas方案，但是性能不怎么好。
+* Qml Shapes
+>Qml Shapes是Qt5.10版本新增加的功能，它是官方提供的易用性以及性能的最佳方案。
+* Qml SceneGraph
+
+* Qml QQuickFrameBufferObject
+
+* Qml ShaderEffect
+
+* QVulkanWindow
+>OpenGL的下一代, Qt 5.10开始, 也提供了vulkan的支持。
+
+
 ## 案例测试方式:
 
 qmlscene测试工具,如需创建项目式的工程,需要调整库路径以及图片资源路径.
@@ -41,7 +57,8 @@ qmlscene测试工具,如需创建项目式的工程,需要调整库路径以及�
 | RotateCursor | 控件旋转器 | [MarkDown](Test/RotateCursorTest/README.md) |
 | TemplateWidget | 自定义拖动控件 | [MarkDown](Test/TemplateWidgetTest/README.md) |
 | TextOneByOneShow | 文字逐个显示 | [MarkDown](Test/TextOneByOneShowTest/README.md) |
-| ArcProgressBar | 圆弧&圆环型进度条 | [MarkDown](Test/ArcProgressBarTest/README.md) |
+| ArcProgressBar(基于Qml Shapes) | 圆弧&圆环型进度条 | [MarkDown](Test/ArcProgressBarTest/README.md) |
+| ArcProgressBarCanvas(基于Qml Canvas) | 圆弧&圆环型进度条 | [MarkDown](Test/ArcProgressBarCanvasTest/README.md) |
 | BarTypeProgressBar | 条型进度条 | [MarkDown](Test/BarTypeProgressBarTest/README.md) |
 | ImageFlicker | 图片定时闪烁 | [MarkDown](Test/ImageFlickerTest/README.md) |
 
