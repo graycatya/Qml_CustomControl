@@ -38,11 +38,12 @@ Item {
     }
     Timer {
         id: timer
-        interval: 6000
+        interval: 14000
         repeat: true 
         running: true
         property bool berth: true
         onTriggered: {
+            timer.interval = 6000
             welcomeui.visible = false
             if(root.startstation <= root.endstation && root.just == true)
             {
