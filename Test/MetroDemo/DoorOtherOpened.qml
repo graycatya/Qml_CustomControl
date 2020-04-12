@@ -7,6 +7,7 @@ Item {
     width: 124; height: 100
     Image {
         source: "../../png/door.png"
+        asynchronous: true
     }
     ImageFlicker {
         x: 31; y: 16

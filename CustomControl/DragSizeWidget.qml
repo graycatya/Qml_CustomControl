@@ -203,6 +203,10 @@ Rectangle {
         width: root.width - border.width * 2
         mouseStyle: Qt.SizeVerCursor
         onPosDragWidget: {
+            console.log("root.x", root.x);
+            console.log("root.y", root.y);
+            console.log("bottomdragsize.x ", bottomdragsize.x);
+            console.log("bottomdragsize.y ", bottomdragsize.y);
             if(root.control.height + pos.y > 0)
             {
                 root.control.height += pos.y
@@ -287,6 +291,8 @@ Rectangle {
 
         mouseStyle: Qt.SizeFDiagCursor
         onPosDragWidget: {
+            console.log("pos.x " + pos.x);
+            console.log("pos.y " + pos.y);
             if(root.control.width + pos.x > 0)
             {
                 root.control.width += pos.x

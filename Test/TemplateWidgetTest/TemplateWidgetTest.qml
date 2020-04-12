@@ -28,9 +28,15 @@ Rectangle {
                 parent.focus = true
             }
         }
+        RotateCursor {
+            visible: parent.focus
+        }
         TemplateWidget { 
             visible: parent.focus
-         }
+        }
+        onXChanged: {
+            console.log("onXChanged: " + rectangle.x);
+        }
 
     }
 

@@ -12,6 +12,7 @@ Item {
     Image {
         id: image 
         visible: true
+        asynchronous: true
     }
     Timer {
         id: timer
@@ -20,6 +21,15 @@ Item {
         running: true 
         onTriggered: {
             image.visible = !image.visible
+        }
+    }
+    onVisibleChanged: {
+        if (root.visible == true)
+        {
+            timer.running = true
+        } else
+        {
+            timer.running = false
         }
     }
 }

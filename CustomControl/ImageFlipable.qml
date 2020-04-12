@@ -18,8 +18,8 @@ Flipable {
     property alias loops: animation.loops
     property alias running: animation.running
 
-    front: Image { id: image; source: filpable.fronturl; anchors.centerIn: parent }
-    back: Image { source: filpable.backurl; anchors.centerIn: parent }
+    front: Image { id: image; source: filpable.fronturl; anchors.centerIn: parent; asynchronous: true }
+    back: Image { source: filpable.backurl; anchors.centerIn: parent; asynchronous: true }
 
     transform: Rotation {
         id: rotation 
@@ -66,6 +66,16 @@ Flipable {
             from: filpable.from
             to: filpable.to
             duration: filpable.duration
+        }
+    }
+
+    onVisibleChanged: {
+        if (filpable.visible == true)
+        {
+            animation.running = true
+        } else
+        {
+            animation.running = false
         }
     }
 }

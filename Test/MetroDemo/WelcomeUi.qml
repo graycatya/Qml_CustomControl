@@ -10,12 +10,14 @@ Item {
         source: "../../png/background.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Image {
         x: 76; y: 18
         source: "../../png/logotext.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     ImageFlipable {
         x: 19; y: 16

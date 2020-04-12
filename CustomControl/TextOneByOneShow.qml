@@ -33,4 +33,13 @@ Item {
             textIndex++;
         }
     }
+    onVisibleChanged: {
+        if (root.visible == true)
+        {
+            textTimer.running = true
+        } else
+        {
+            textTimer.running = false
+        }
+    }
 }

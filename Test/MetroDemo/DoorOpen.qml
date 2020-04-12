@@ -14,6 +14,7 @@ Item {
         id: doorleft
         x: 0; y: 0
         source: "../../png/doorleft.png"
+        asynchronous: true
         ParallelAnimation{
             running: animation_running
             loops: animation_loops
@@ -37,6 +38,7 @@ Item {
         id: doorright
         x: 81; y: 0
         source: "../../png/doorright.png"
+        asynchronous: true
         ParallelAnimation{
             running: animation_running
             loops: animation_loops
@@ -54,6 +56,15 @@ Item {
                 to: 0
                 duration: animation_duration
             }
+        }
+    }
+    onVisibleChanged: {
+        if (root.visible == true)
+        {
+            animation_running = true
+        } else
+        {
+            animation_running = false
         }
     }
 }

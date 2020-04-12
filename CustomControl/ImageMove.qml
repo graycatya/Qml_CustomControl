@@ -26,6 +26,7 @@ Rectangle {
 
     Image {
         id: imageroll
+        asynchronous: true
 
         ParallelAnimation{
             id: imageroll_sequential

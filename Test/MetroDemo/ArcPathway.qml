@@ -52,4 +52,13 @@ ArcProgressBar {
         arcpathway.running = false 
         arcpathway.running = true
     }
+    onVisibleChanged: {
+        if (arcpathway.visible == true)
+        {
+            arcpathway.running = true
+        } else
+        {
+            arcpathway.running = false
+        }
+    }
 }

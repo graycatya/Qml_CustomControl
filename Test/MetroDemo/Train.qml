@@ -13,9 +13,19 @@ ImageMove {
     animation_running: true
     animation_duration: 4000
     onJustChanged: {
-        console.log("onJustChanged");
+
         train.animation_running = false 
         train.state = train.just ? "lefttoright" : "righttoleft"
         train.animation_running = true
+    }
+
+    onVisibleChanged: {
+        if (train.visible == true)
+        {
+            train.animation_running = true
+        } else
+        {
+            train.animation_running = false
+        }
     }
 }

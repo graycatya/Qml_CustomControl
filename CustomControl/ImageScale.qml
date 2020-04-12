@@ -22,6 +22,7 @@ Item {
         id: image 
         width: root.width
         height: root.height
+        asynchronous: true
 
         SequentialAnimation {
             id: squential_animation

@@ -18,12 +18,14 @@ Item {
         source: "../../png/background.png"
         width: source.width 
         height: source.height 
+        asynchronous: true
     }
     Image {
         x: 86; y: 19
         source: "../../png/logotext.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     ImageFlipable {
         x: 29; y: 17
@@ -38,12 +40,14 @@ Item {
         source: "../../png/first.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Image {
         x: 29; y: 88
         source: "../../png/endstation.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Item {
         x:95; y: 88
@@ -77,18 +81,21 @@ Item {
         source: "../../png/first.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Image {
         x: 68; y: 139
         source: "../../png/thisstation.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Image {
         x: 25; y: 190
         source: "../../png/first.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Item {
         x: 42; y: 200
@@ -130,6 +137,7 @@ Item {
                 //x: 287; y: 61
                 anchors.centerIn: parent
                 source: "../../png/roundblack.png"
+                asynchronous: true
             }
         }
         Item {
@@ -162,6 +170,7 @@ Item {
         x: 434; y: 84
         source: "../../png/arrowright.png"
         rotation: root.just ? 0 : 180
+        asynchronous: true
     }
 
     Item {
@@ -209,6 +218,7 @@ Item {
         x: 758; y: 85
         source: "../../png/arrowright.png"
         rotation: root.just ? 0 : 180
+        asynchronous: true
     }
 
     Item {
@@ -220,6 +230,7 @@ Item {
             Image {
                 anchors.centerIn: parent
                 source: "../../png/roundgreen.png"
+                asynchronous: true
             }
         }
         Item {
@@ -257,12 +268,14 @@ Item {
         x: 1117; y: 173
         visible: doorOpen
         source: "../../png/doorsonthis.png"
+        asynchronous: true
     }
 
     Image {
         x: 1099; y: 174
         visible: !doorOpen
         source: "../../png/doorsonopened.png"
+        asynchronous: true
     }
     onThisstationChanged: {
         if(root.just)

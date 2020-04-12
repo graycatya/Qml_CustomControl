@@ -18,12 +18,14 @@ Item {
         source: "../../png/background.png"
         width: source.width 
         height: source.height 
+        asynchronous: true
     }
     Image {
         x: 86; y: 19
         source: "../../png/logotext.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     ImageFlipable {
         x: 29; y: 17
@@ -32,18 +34,21 @@ Item {
         fronturl: "../../png/logo.png"
         backurl: "../../png/logo.png"
         state: "axisY"
+
     }
     Image {
         x: 25; y: 74
         source: "../../png/first.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Image {
         x: 29; y: 88
         source: "../../png/endstation.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Item {
         x:95; y: 88
@@ -77,18 +82,21 @@ Item {
         source: "../../png/first.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Image {
         x: 68; y: 139
         source: "../../png/nextstation.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Image {
         x: 25; y: 190
         source: "../../png/first.png"
         width: source.width 
         height: source.height
+        asynchronous: true
     }
     Item {
         x: 42; y: 200

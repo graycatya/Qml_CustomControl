@@ -4,7 +4,7 @@
 
 
 DragWidget控件能让控件移动
-DragSizeWidget控件能让控件
+DragSizeWidget控件能让控件改变大小
 
 ## DragWidget扩展属性
 * containsMouse(判断鼠标是否在当前控件)
