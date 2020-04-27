@@ -21,7 +21,7 @@
 
  * Windows10
  * Linux
- * 树莓派3b+:[树莓派交叉编译配置](https://www.yinxiang.com/everhub/note/f3a9458f-7eda-4845-b145-7cc7bcd8d723)
+ * 树莓派3b+:[树莓派交叉编译配置](http://www.graycatya.com/article/1)
 
  ## Qml 自绘方案
 
