@@ -21,6 +21,7 @@
 
  * Windows10
  * Linux
+ * macOs10
  * 树莓派3b+:[树莓派交叉编译配置](http://www.graycatya.com/article/1)
 
  ## Qml 自绘方案

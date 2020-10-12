@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+﻿cmake_minimum_required(VERSION 3.10)
 
 project(QmlLog)
 
@@ -22,7 +22,9 @@ find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
 aux_source_directory(. DIR_LIB_SRCS)
 
-add_executable(${PROJECT_NAME} ${DIR_LIB_SRCS} "qml.qrc" )
+qt5_add_resources(QRC_FILES  "qml.qrc")
+
+add_executable(${PROJECT_NAME} ${DIR_LIB_SRCS} ${QRC_FILES})
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${EXTRA_LIBS2})
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick)
