@@ -2,7 +2,7 @@
 
 ## 说明:
 
-这是一个Qml&QtQuick控件集,主要对地铁地图，地铁流媒体做了常用的子控件。
+这是一个Qml&QtQuick控件集,持续更新。
 
 控件等级:
  * 1级控件在文件夹(CustomControl)中,就是案例中用到的轮子，有了轮子就能跑起来了。
@@ -63,12 +63,22 @@ qmlscene测试工具,如需创建项目式的工程,需要调整库路径以及�
 | BarTypeProgressBar | 条型进度条 | [MarkDown](Test/BarTypeProgressBarTest/README.md) |
 | ImageFlicker | 图片定时闪烁 | [MarkDown](Test/ImageFlickerTest/README.md) |
 
+
+QtQuick 综合案例 - Qml二维码生成
+------
+
+| 案例名称 | 名称 | 案例 |
+|  :----:  | :----: | :----: | 
+| QrenCode | Qml二维码生成 | [MarkDown](QrenCode/README.md) |
+
+
 QtQuick 综合案例 - Qml轻量级日志系统(C++)
 ------
 
 | 案例名称 | 名称 | 案例 |
 |  :----:  | :----: | :----: | 
 | QmlLog  | Qml轻量级日志模块 | [MarkDown](QmlLog/README.md) |
+
 
 
 QtQuick 综合案例 - 惠州地铁一号线
