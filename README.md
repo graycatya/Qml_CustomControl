@@ -1,6 +1,33 @@
 # Qml_CustomControl
 
+## 徽章:
+----
+
+| Gitee | |
+|:----:|:----:|
+|![gitee-start]|![gitee-fork]|
+
+[gitee-start]: https://gitee.com/greycatah/Qml_CustomControl/badge/star.svg?theme=dark
+
+[gitee-fork]: https://gitee.com/greycatah/Qml_CustomControl/badge/fork.svg?theme=dark
+
+| Github | | | |
+|:----:|:----:|:----:|:----:|
+|![github-issues]|![github-forks]|![github-stars]|![github-license]|
+
+[github-issues]: https://img.shields.io/github/issues/graycatya/Qml_CustomControl
+[github-forks]: https://img.shields.io/github/forks/graycatya/Qml_CustomControl
+[github-stars]: https://img.shields.io/github/stars/graycatya/Qml_CustomControl
+[github-license]: https://img.shields.io/github/license/graycatya/Qml_CustomControl
+
+
+
+
+
+
+
 ## 说明:
+----
 
 这是一个Qml&QtQuick控件集,持续更新。
 
