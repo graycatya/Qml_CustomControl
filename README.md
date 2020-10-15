@@ -13,7 +13,7 @@
 
 | Github | | | |
 |:----:|:----:|:----:|:----:|
-|![github-issues]|![github-forks]|![github-stars]|![github-license]|
+|![github-issues]|![github-stars]|![github-forks]|![github-license]|
 
 [github-issues]: https://img.shields.io/github/issues/graycatya/Qml_CustomControl
 [github-forks]: https://img.shields.io/github/forks/graycatya/Qml_CustomControl
