@@ -1,4 +1,6 @@
-#pragma once
+﻿#ifndef CATLOG_SINGTON_H
+#define CATLOG_SINGTON_H
+
 #include "CatLog_Message.hpp"
 #include <thread>
 #include <mutex>
@@ -10,6 +12,7 @@
 #include <queue>
 #include <map>
 #include <chrono>
+//#include <filesystem>
 
 namespace CATLOG
 {
@@ -108,6 +111,25 @@ class CatLog
             m_pCondition->notify_one();
         }
 
+        static void __Write_Log(std::string&& __FILE_PATH, std::string&& __LOG_MSG) noexcept
+        {
+                CatLog::enqueue([__FILE_PATH, __LOG_MSG](){
+                    std::string file_path = __FILE_PATH + ".log";
+                    std::ofstream outfile;
+                    outfile.open(file_path, std::ios::out | std::ios::app );
+                    outfile << __LOG_MSG << std::endl;
+                    outfile.close();
+                });
+        }
+
+        static void __Write_Log(std::string&& __LOG_MSG) noexcept
+        {
+                CatLog::enqueue([__LOG_MSG](){
+                    std::cout << __LOG_MSG << std::endl;
+                    std::cout.flush();
+                });
+        }
+
     protected:
     private:
         CatLog() {}
@@ -123,24 +145,6 @@ class CatLog
         static bool m_bThreadStop;
 };
 
-/*
-void __Write_Log(std::string&& __FILE_PATH, std::string&& __LOG_MSG) noexcept
-{
-            CatLog::enqueue([__FILE_PATH, __LOG_MSG](){
-            std::string file_path = __FILE_PATH + ".log";
-            std::ofstream outfile;
-            outfile.open(file_path, std::ios::out | std::ios::app );
-            outfile << __LOG_MSG << std::endl;
-            outfile.close();
-        });
-}
-
-void __Write_Log(std::string&& __LOG_MSG) noexcept
-{
-            CatLog::enqueue([__LOG_MSG](){
-            std::cout << __LOG_MSG << std::endl;
-            std::cout.flush();
-        });
-}*/
-
 };
+
+#endif

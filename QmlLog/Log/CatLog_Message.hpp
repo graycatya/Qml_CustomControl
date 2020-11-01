@@ -4,6 +4,14 @@
 #include<string>
 #include<chrono>
 #include<initializer_list>
+#include<time.h>
+
+#define DEBUG_LOG(_MSG) ( LOG_MESSAGE<LEVEL::DEBUG>::Log_Head({ _MSG }) )
+#define INFO_LOG(_MSG) ( LOG_MESSAGE<LEVEL::INFO>::Log_Head({ _MSG }) )
+#define WARN_LOG(_MSG) ( LOG_MESSAGE<LEVEL::WARN>::Log_Head({ _MSG }) )
+#define ERROR_LOG(_MSG) ( LOG_MESSAGE<LEVEL::ERROR>::Log_Head({ _MSG }) )
+#define ALARM_LOG(_MSG) ( LOG_MESSAGE<LEVEL::ALARM>::Log_Head({ _MSG }) )
+#define FATAL_LOG(_MSG) ( LOG_MESSAGE<LEVEL::FATAL>::Log_Head({ _MSG }) )
 
 #define _DEBUG_HEAD ( LOG_MESSAGE<LEVEL::DEBUG>::Log_Head({ __FUNCTION__, std::to_string(__LINE__) }) )
 #define _INFO_HEAD ( LOG_MESSAGE<LEVEL::INFO>::Log_Head({ __FUNCTION__, std::to_string(__LINE__) }) )
@@ -62,11 +70,12 @@ struct LOG_MESSAGE{
     {
             std::string log_head = "";
             auto tt = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-            struct tm* ptm = localtime(&tt);
+            struct tm ptm;
+            ptm = *std::localtime(&tt);
             char date[60] = {0};
             sprintf(date, "%d-%02d-%02d %02d:%02d:%02d",
-                ptm->tm_year + 1900, ptm->tm_mon + 1, ptm->tm_mday,
-                ptm->tm_hour, ptm->tm_min, ptm->tm_sec);
+                ptm.tm_year + 1900, ptm.tm_mon + 1, ptm.tm_mday,
+                ptm.tm_hour, ptm.tm_min, ptm.tm_sec);
             log_head = std::string(date) + " | " + Get_Level();
             for(auto &msg : log_msg)
             {
