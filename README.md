@@ -69,7 +69,11 @@
 
 ## 案例测试方式:
 
-qmlscene测试工具,如需创建项目式的工程,需要调整库路径以及图片资源路径.
+qmlscene测试工具.
+
+Qt Design Studio.
+
+Qt Creator.
 
 ## QtQuick控件说明
 

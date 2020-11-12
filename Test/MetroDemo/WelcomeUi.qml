@@ -30,8 +30,10 @@ Item {
     TextOneByOneShow {
         x: 332; y: 96
         textVar: ["欢", " 迎", " 乘", " 坐", " 惠", " 州", " 地", " 铁"]
-        textfont.pixelSize: 72
-        textfont.family: "华文楷体"
+        textfont {
+            pixelSize: 72;
+            family: "华文楷体";
+        }
         color: "#8b1d22"
     }
 }

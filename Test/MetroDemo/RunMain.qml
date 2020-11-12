@@ -36,6 +36,7 @@ Item {
         implicitWidth: 26
         textSize: 26
     }
+
     Timer {
         id: timer
         interval: 14000
